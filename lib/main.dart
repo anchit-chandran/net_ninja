@@ -59,27 +59,37 @@ class Home extends StatelessWidget {
                 labelText: "Current Level",
                 valueText: "40",
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.grey[400],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                    child: Text("anchit97123@gmail.com",
-                        style: TextStyle(
-                          color: Colors.grey[400],
-                          fontSize: 18,
-                          
-                        )),
-                  )
-                ],
-              )
+              Email()
             ],
           ),
         ));
+  }
+}
+
+class Email extends StatelessWidget {
+  const Email({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Icon(
+          Icons.email,
+          color: Colors.grey[400],
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          child: Text("anchit97123@gmail.com",
+              style: TextStyle(
+                color: Colors.grey[400],
+                fontSize: 18,
+              )),
+        )
+      ],
+    );
   }
 }
 
