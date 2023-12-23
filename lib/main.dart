@@ -25,10 +25,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({
     super.key,
   });
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int level = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +51,14 @@ class Home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 41, 41, 41),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              level += 1;
+            });
+          },
+          child: Icon(Icons.add),
+        ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
           child: Column(
@@ -57,12 +72,26 @@ class Home extends StatelessWidget {
               ),
               Field(
                 labelText: "Current Level",
-                valueText: "40",
+                valueText: "$level",
               ),
-              Email()
+              Email(),
             ],
           ),
         ));
+  }
+}
+
+class Test extends StatefulWidget {
+  const Test({super.key});
+
+  @override
+  State<Test> createState() => _TestState();
+}
+
+class _TestState extends State<Test> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
 
